@@ -6,19 +6,21 @@ import {
   SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs,
   SiNodedotjs, SiExpress, SiLaravel,
   SiMysql, SiPostgresql, SiMongodb,
-  SiGit, SiDocker, SiFigma
+  SiGit, SiDocker, SiFigma,
 } from "react-icons/si";
+import LottieScene from "@/components/LottieScene";
+import { FloatingRings } from "@/components/FloatingGeometry";
 
 const categories = [
   {
     name: "Frontend",
     color: "#E4A390",
     skills: [
-      { name: "HTML5", icon: <SiHtml5 />, level: 95 },
-      { name: "CSS3", icon: <SiCss />, level: 90 },
+      { name: "HTML5",      icon: <SiHtml5 />,     level: 95 },
+      { name: "CSS3",       icon: <SiCss />,        level: 90 },
       { name: "JavaScript", icon: <SiJavascript />, level: 88 },
-      { name: "React", icon: <SiReact />, level: 85 },
-      { name: "Next.js", icon: <SiNextdotjs />, level: 78 },
+      { name: "React",      icon: <SiReact />,      level: 85 },
+      { name: "Next.js",    icon: <SiNextdotjs />,  level: 78 },
     ],
   },
   {
@@ -26,28 +28,33 @@ const categories = [
     color: "#D49C68",
     skills: [
       { name: "Node.js", icon: <SiNodedotjs />, level: 82 },
-      { name: "Express", icon: <SiExpress />, level: 80 },
-      { name: "Laravel", icon: <SiLaravel />, level: 72 },
+      { name: "Express", icon: <SiExpress />,   level: 80 },
+      { name: "Laravel", icon: <SiLaravel />,   level: 72 },
     ],
   },
   {
     name: "Database",
     color: "#8A4F55",
     skills: [
-      { name: "MySQL", icon: <SiMysql />, level: 85 },
+      { name: "MySQL",      icon: <SiMysql />,      level: 85 },
       { name: "PostgreSQL", icon: <SiPostgresql />, level: 78 },
-      { name: "MongoDB", icon: <SiMongodb />, level: 75 },
+      { name: "MongoDB",    icon: <SiMongodb />,    level: 75 },
     ],
   },
   {
     name: "Tools",
     color: "#E4A390",
     skills: [
-      { name: "Git", icon: <SiGit />, level: 90 },
+      { name: "Git",    icon: <SiGit />,    level: 90 },
       { name: "Docker", icon: <SiDocker />, level: 68 },
-      { name: "Figma", icon: <SiFigma />, level: 80 },
+      { name: "Figma",  icon: <SiFigma />,  level: 80 },
     ],
   },
+];
+
+const skillRings = [
+  { size: 360, x: "-5%",  y: "10%",  duration: 40, opacity: 0.045, border: "#E4A390", rotate: 20 },
+  { size: 220, x: "88%",  y: "60%",  duration: 30, opacity: 0.06,  border: "#D49C68", rotate: -15, delay: 3 },
 ];
 
 export default function Skills() {
@@ -55,8 +62,34 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto">
-      <SectionHeader label="Expertise" title={<>Technical<br /><span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}>Skills</span></>} />
+    <section id="skills" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
+      {/* Subtle background rings */}
+      <FloatingRings rings={skillRings} />
+
+      {/* Lottie data lines — right side, subtle */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 w-[300px] h-[180px] pointer-events-none opacity-[0.18]">
+        <LottieScene
+          src="/animations/data-lines.json"
+          style={{ width: "100%", height: "100%" }}
+          speed={0.6}
+        />
+      </div>
+
+      <SectionHeader
+        label="Expertise"
+        title={
+          <>
+            Technical
+            <br />
+            <span
+              className="text-transparent bg-clip-text"
+              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+            >
+              Skills
+            </span>
+          </>
+        }
+      />
 
       <div ref={ref} className="grid md:grid-cols-2 gap-8">
         {categories.map((cat, ci) => (
@@ -70,7 +103,9 @@ export default function Skills() {
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
-              <h3 className="text-white font-sans font-semibold text-sm tracking-widest uppercase">{cat.name}</h3>
+              <h3 className="text-white font-sans font-semibold text-sm tracking-widest uppercase">
+                {cat.name}
+              </h3>
             </div>
 
             <div className="space-y-5">
@@ -86,10 +121,16 @@ export default function Skills() {
                   <div className="h-[3px] rounded-full bg-white/5 overflow-hidden">
                     <motion.div
                       className="h-full rounded-full"
-                      style={{ background: `linear-gradient(90deg, ${cat.color}99, ${cat.color})` }}
+                      style={{
+                        background: `linear-gradient(90deg, ${cat.color}99, ${cat.color})`,
+                      }}
                       initial={{ width: 0 }}
                       animate={inView ? { width: `${skill.level}%` } : {}}
-                      transition={{ duration: 1, delay: ci * 0.15 + si * 0.08 + 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{
+                        duration: 1,
+                        delay: ci * 0.15 + si * 0.08 + 0.3,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                     />
                   </div>
                 </div>

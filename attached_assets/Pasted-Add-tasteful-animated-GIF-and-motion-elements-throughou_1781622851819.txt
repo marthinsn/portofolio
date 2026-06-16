@@ -1,0 +1,135 @@
+Add tasteful animated GIF and motion elements throughout the portfolio.
+
+Hero Section
+
+Place subtle developer-themed animated visuals around the hero section.
+
+Examples:
+
+Floating code animation
+Abstract technology animation
+Digital particles
+Floating geometric elements
+Animated gradient shapes
+
+Requirements:
+
+Low opacity
+Smooth looping
+Non-distracting
+Premium aesthetic
+About Section
+
+Add a subtle animated illustration beside the About content.
+
+Examples:
+
+Developer working animation
+Coding animation
+Laptop workspace animation
+Abstract tech illustration
+
+Requirements:
+
+Loop seamlessly
+Blend naturally with the design
+Maintain elegant appearance
+Organization Section
+
+Add small animated decorative elements.
+
+Examples:
+
+Floating connection nodes
+Animated timeline indicators
+Network graph animation
+
+Animations should react slightly when cards enter the viewport.
+
+Skills Section
+
+Add animated technology-themed GIFs.
+
+Examples:
+
+Code flowing animation
+Data visualization animation
+Server activity animation
+AI neural network animation
+
+Requirements:
+
+Positioned behind content
+Low opacity
+Does not reduce readability
+Portfolio Section
+
+For each project card:
+
+Display animated project preview on hover.
+Show mini GIF preview of project interactions.
+Smooth zoom effect.
+Auto-play preview animation.
+
+When opening project details:
+
+Large project GIF demonstrations.
+Feature showcase animations.
+Device mockup animations.
+Contact Section
+
+Add a subtle animated illustration.
+
+Examples:
+
+Message sending animation
+Communication animation
+Network connection animation
+FLOATING DECORATIVE ELEMENTS
+
+Create floating animated elements across the website:
+
+Geometric circles
+Gradient blobs
+Abstract lines
+Tiny particles
+Soft glowing shapes
+
+Requirements:
+
+Move slowly.
+Different speeds.
+Infinite animation.
+Create depth effect.
+Stay behind content.
+LOTTIE ANIMATIONS
+
+Use modern Lottie animations instead of traditional GIF whenever possible.
+
+Suggested themes:
+
+Developer Coding
+Web Development
+Technology
+AI
+Programming
+Data Analytics
+Cloud Computing
+
+Requirements:
+
+Lightweight
+Responsive
+Smooth
+Professional
+INTERACTIVE BACKGROUND VISUALS
+
+Add occasional animated visual elements:
+
+Floating code snippets
+Binary particles
+Digital waves
+Network connections
+Abstract tech patterns
+
+The animations should feel premium, futuristic, and elegant rather than playful.

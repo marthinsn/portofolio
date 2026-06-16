@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { SectionHeader } from "./About";
 import { SiWhatsapp } from "react-icons/si";
 import { Mail, Send, Linkedin } from "lucide-react";
+import LottieScene from "@/components/LottieScene";
+import { FloatingDots } from "@/components/FloatingGeometry";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -38,8 +40,34 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto">
-      <SectionHeader label="Get In Touch" title={<>Let's<br /><span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}>Connect</span></>} />
+    <section id="contact" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
+      {/* Floating dots */}
+      <FloatingDots count={4} />
+
+      {/* Lottie pulse rings — top-right decoration */}
+      <div className="absolute top-4 right-4 w-[200px] h-[200px] pointer-events-none opacity-[0.14]">
+        <LottieScene
+          src="/animations/pulse-rings.json"
+          style={{ width: "100%", height: "100%" }}
+          speed={0.35}
+        />
+      </div>
+
+      <SectionHeader
+        label="Get In Touch"
+        title={
+          <>
+            Let's
+            <br />
+            <span
+              className="text-transparent bg-clip-text"
+              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+            >
+              Connect
+            </span>
+          </>
+        }
+      />
 
       <div ref={ref} className="grid md:grid-cols-2 gap-12">
         <motion.div
@@ -64,7 +92,10 @@ export default function Contact() {
                 whileHover={{ x: 4 }}
                 className="flex items-center gap-4 glass-card rounded-xl px-5 py-4 group hover:border-[#E4A390]/30 transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-[#D49C68] group-hover:text-[#E4A390] transition-colors shrink-0" style={{ background: "rgba(138,79,85,0.2)" }}>
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-[#D49C68] group-hover:text-[#E4A390] transition-colors shrink-0"
+                  style={{ background: "rgba(138,79,85,0.2)" }}
+                >
                   {link.icon}
                 </div>
                 <div>
@@ -73,6 +104,15 @@ export default function Contact() {
                 </div>
               </motion.a>
             ))}
+          </div>
+
+          {/* Lottie particles — below contact links */}
+          <div className="w-[180px] h-[180px] opacity-[0.28] pointer-events-none -ml-2">
+            <LottieScene
+              src="/animations/particles.json"
+              style={{ width: "100%", height: "100%" }}
+              speed={0.6}
+            />
           </div>
         </motion.div>
 
@@ -87,16 +127,31 @@ export default function Contact() {
               animate={{ opacity: 1, scale: 1 }}
               className="glass-card rounded-2xl p-8 text-center h-full flex flex-col items-center justify-center gap-4"
             >
-              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #D49C6840, #E4A39040)" }}>
+              {/* Lottie success rings */}
+              <div className="w-20 h-20">
+                <LottieScene
+                  src="/animations/pulse-rings.json"
+                  style={{ width: "100%", height: "100%" }}
+                  speed={1.2}
+                />
+              </div>
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, #D49C6840, #E4A39040)" }}
+              >
                 <Send size={22} className="text-[#E4A390]" />
               </div>
               <h3 className="text-white font-serif text-xl">Message sent!</h3>
-              <p className="text-white/50 text-sm font-sans">Thanks for reaching out. I'll get back to you soon.</p>
+              <p className="text-white/50 text-sm font-sans">
+                Thanks for reaching out. I'll get back to you soon.
+              </p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-7 space-y-4">
               <div>
-                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">Name</label>
+                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">
+                  Name
+                </label>
                 <input
                   data-testid="input-name"
                   type="text"
@@ -110,7 +165,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">Email</label>
+                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">
+                  Email
+                </label>
                 <input
                   data-testid="input-email"
                   type="email"
@@ -124,7 +181,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">Message</label>
+                <label className="text-white/40 text-xs font-sans tracking-wider uppercase block mb-2">
+                  Message
+                </label>
                 <textarea
                   data-testid="input-message"
                   required

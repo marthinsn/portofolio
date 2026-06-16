@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, BookOpen, Users, Zap, Target, Star, Compass } from "lucide-react";
+import { GraduationCap, Users, Zap, Target, Star, Compass } from "lucide-react";
+import LottieScene from "@/components/LottieScene";
+import { FloatingDots } from "@/components/FloatingGeometry";
 
 const strengths = [
   { icon: <Target size={20} />, label: "Problem Solving", desc: "Breaking down complex challenges into elegant solutions" },
@@ -28,8 +30,34 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto">
-      <SectionHeader label="Who I Am" title={<>About <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}>Me<br /></span></>} />
+    <section id="about" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
+      {/* Subtle floating dots in the background */}
+      <FloatingDots count={5} />
+
+      {/* Lottie particles — top-right corner decoration */}
+      <div className="absolute top-0 right-0 w-[220px] h-[220px] pointer-events-none opacity-[0.22]">
+        <LottieScene
+          src="/animations/particles.json"
+          style={{ width: "100%", height: "100%" }}
+          speed={0.5}
+        />
+      </div>
+
+      <SectionHeader
+        label="Who I Am"
+        title={
+          <>
+            About{" "}
+            <span
+              className="text-transparent bg-clip-text"
+              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+            >
+              Me
+              <br />
+            </span>
+          </>
+        }
+      />
 
       <div ref={ref} className="grid md:grid-cols-2 gap-16">
         <motion.div
@@ -38,11 +66,25 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-8"
         >
-          <p className="text-white/70 text-lg leading-relaxed font-sans font-light">
-            I'm an Information Technology student with a deep passion for crafting digital experiences that are both functional and visually compelling. I bridge the gap between design thinking and technical execution — every project I touch is shaped by curiosity, precision, and care.
-          </p>
+          {/* Lottie abstract illustration beside bio — minimal, geometric */}
+          <div className="relative">
+            <div className="absolute -top-6 -right-6 w-[120px] h-[120px] pointer-events-none opacity-[0.20]">
+              <LottieScene
+                src="/animations/pulse-rings.json"
+                style={{ width: "100%", height: "100%" }}
+                speed={0.3}
+              />
+            </div>
+            <p className="text-white/70 text-lg leading-relaxed font-sans font-light">
+              I'm an Information Technology student with a deep passion for crafting digital experiences
+              that are both functional and visually compelling. I bridge the gap between design thinking
+              and technical execution — every project I touch is shaped by curiosity, precision, and care.
+            </p>
+          </div>
+
           <p className="text-white/50 text-base leading-relaxed font-sans font-light">
-            When I'm not building, I'm learning — exploring the edges of modern web development, open-source tooling, and system design patterns that scale.
+            When I'm not building, I'm learning — exploring the edges of modern web development,
+            open-source tooling, and system design patterns that scale.
           </p>
 
           <div className="space-y-4 pt-2">
@@ -60,8 +102,12 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <GraduationCap size={18} className="text-[#D49C68] mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-white font-serif font-semibold text-lg leading-tight">Bachelor of Information Technology</p>
-                    <p className="text-[#E4A390]/70 text-sm mt-1 font-sans">State University &nbsp;·&nbsp; Currently in Semester 5</p>
+                    <p className="text-white font-serif font-semibold text-lg leading-tight">
+                      Bachelor of Information Technology
+                    </p>
+                    <p className="text-[#E4A390]/70 text-sm mt-1 font-sans">
+                      State University &nbsp;·&nbsp; Currently in Semester 5
+                    </p>
                     <p className="text-white/40 text-xs mt-2 font-sans tracking-wide">2022 — Present</p>
                   </div>
                 </div>
@@ -83,7 +129,10 @@ export default function About() {
                 className="glass-card rounded-xl p-4 flex items-center gap-4 group cursor-default"
                 data-testid={`card-strength-${i}`}
               >
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-[#D49C68] transition-colors group-hover:text-[#E4A390]" style={{ background: "rgba(138,79,85,0.2)" }}>
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-[#D49C68] transition-colors group-hover:text-[#E4A390]"
+                  style={{ background: "rgba(138,79,85,0.2)" }}
+                >
                   {s.icon}
                 </div>
                 <div>
