@@ -1,0 +1,149 @@
+I want the entire website to feel alive at all times.
+
+Add multiple continuously moving aesthetic animations throughout the website.
+
+The animations should never stop.
+
+They must loop infinitely and smoothly.
+
+Avoid cartoon effects and avoid distracting animations.
+
+The style should feel premium, futuristic, elegant, cinematic, and modern.
+
+HERO SECTION
+
+Add large ambient animated visuals around the profile image.
+
+Examples:
+
+Flowing light trails
+Floating glowing particles
+Abstract digital waves
+Moving gradient smoke
+Floating geometric shapes
+
+Animations should move continuously.
+
+The hero section should never feel static.
+
+BACKGROUND ANIMATIONS
+
+Create an animated background system.
+
+Requirements:
+
+Infinite moving mesh gradients
+Slow moving light blobs
+Floating glowing particles
+Animated aurora effects
+Dynamic light rays
+Abstract flowing waves
+
+Everything should move continuously.
+
+The website should always have subtle motion.
+
+TECHNOLOGY-THEMED MOTION GRAPHICS
+
+Add continuously looping animations such as:
+
+Flowing code streams
+Animated network connections
+Digital node systems
+Moving data particles
+AI neural network effects
+Circuit-inspired animations
+
+Place these throughout the website.
+
+Use low opacity.
+
+FLOATING DECORATIVE ELEMENTS
+
+Add multiple layers of floating elements:
+
+Layer 1:
+
+Tiny particles
+
+Layer 2:
+
+Medium geometric shapes
+
+Layer 3:
+
+Large blurred glowing blobs
+
+Each layer should move at different speeds.
+
+Create depth and immersion.
+
+PORTFOLIO SECTION
+
+Add ambient motion around project cards.
+
+Examples:
+
+Floating lights
+Moving reflections
+Animated borders
+Glow pulses
+Floating particles
+
+Animations should continue even when the user is not interacting.
+
+AESTHETIC LOTTIE ANIMATIONS
+
+Add continuously looping Lottie animations.
+
+Examples:
+
+Abstract tech motion
+Digital waves
+Coding animations
+Data visualization
+Network systems
+Floating technology elements
+
+These animations should always play.
+
+Do not pause.
+
+Do not require interaction.
+
+PREMIUM SCREEN SAVER EFFECT
+
+The website should feel alive even when the user does nothing.
+
+When the user remains idle:
+
+Background continues moving.
+Particles continue floating.
+Lights continue drifting.
+Shapes continue rotating slowly.
+Lottie animations continue looping.
+
+The website should never look frozen.
+
+VISUAL REFERENCES
+
+Use animation styles inspired by:
+
+Apple keynote backgrounds
+Stripe
+Linear
+Framer
+Spline
+Awwwards-winning portfolios
+Modern SaaS landing pages
+
+Avoid:
+
+Cartoon animations
+Meme GIFs
+Anime GIFs
+Gaming effects
+Cyberpunk RGB effects
+Flashing lights
+
+The result should feel luxurious, elegant, cinematic, and premium.

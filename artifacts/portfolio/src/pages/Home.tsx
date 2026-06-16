@@ -1,5 +1,6 @@
 import React from "react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ThreeBackground from "@/components/ThreeBackground";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -18,6 +19,7 @@ export default function Home() {
       <LoadingScreen />
       <CustomCursor />
       <AnimatedBackground />
+      <ThreeBackground />
       <MouseGlow />
       <ScrollProgress />
       
