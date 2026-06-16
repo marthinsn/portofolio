@@ -1,0 +1,213 @@
+Create a modern, premium, highly interactive personal portfolio website for an Information Technology student.
+
+Design Style
+
+The website should have a luxurious, elegant, modern, and cinematic aesthetic inspired by Apple, Awwwards, Framer, and modern creative developer portfolios.
+
+Use this exact color palette:
+
+Deep Charcoal: #28222C
+Dark Taupe: #4A3F40
+Dusty Rose: #8A4F55
+Soft Blush: #E4A390
+Warm Sand: #D49C68
+Color Usage
+Background: #28222C
+Secondary Sections: #4A3F40
+Accent Elements: #8A4F55
+Hover Effects: #E4A390
+Buttons & Highlights: #D49C68
+Text: White and light gray
+General Requirements
+Responsive for desktop, tablet, and mobile.
+Smooth scrolling.
+Glassmorphism cards.
+Soft gradients using the palette.
+Elegant typography.
+Modern spacing and visual hierarchy.
+Premium animations using Framer Motion or GSAP.
+Mouse-following glow effect.
+Animated background particles.
+Section reveal animations on scroll.
+Magnetic hover effects on buttons.
+Smooth page transitions.
+Custom cursor effect.
+Parallax scrolling effects.
+HERO / HOME SECTION
+
+Create a full-screen hero section.
+
+Contents:
+
+Large professional profile image on one side.
+Name prominently displayed.
+Subtitle:
+
+"Information Technology Student | Full Stack Developer | Problem Solver"
+
+Short personal tagline:
+
+"I build modern digital solutions that combine functionality, creativity, and user experience."
+
+Buttons:
+
+View My Work
+Download CV
+
+Social Icons:
+
+LinkedIn
+WhatsApp
+Email
+
+Requirements:
+
+Profile image slightly floating.
+Text appears with stagger animation.
+Background animated gradient.
+Mouse movement creates subtle parallax effect.
+ABOUT SECTION
+
+Create a modern split-layout About section.
+
+Contents:
+
+About Me
+
+A concise introduction about myself.
+
+Education Timeline
+Bachelor of Information Technology
+University Name
+Current Semester
+Strengths
+
+Display as animated cards:
+
+Problem Solving
+Team Collaboration
+Fast Learner
+Adaptability
+Leadership
+
+Animations:
+
+Cards fade up when entering viewport.
+Hover effect lifts cards.
+ORGANIZATION SECTION
+
+Create a professional timeline-style section.
+
+Display organizations in elegant cards.
+
+Each card contains:
+
+Organization Name
+Position
+Duration
+Description
+
+Animations:
+
+Timeline line animates while scrolling.
+Cards slide alternately from left and right.
+SKILLS SECTION
+
+Create a highly visual skill showcase.
+
+Categories:
+
+Frontend
+HTML
+CSS
+JavaScript
+React
+Next.js
+Backend
+Node.js
+Express
+Laravel
+Database
+MySQL
+PostgreSQL
+MongoDB
+Tools
+Git
+Docker
+Figma
+
+Requirements:
+
+Animated skill progress indicators.
+Interactive hover effects.
+Icons for every skill.
+Floating skill cards.
+PORTFOLIO SECTION
+
+Create a premium portfolio gallery.
+
+Display project cards in a masonry grid layout.
+
+Each card contains:
+
+Project Image
+Project Title
+Short Description
+Technologies Used
+
+Animations:
+
+Smooth hover zoom.
+Glassmorphism overlay.
+Project preview animation.
+
+When clicking a project:
+
+Open a beautiful project detail modal/page containing:
+
+Large project screenshots
+Project description
+Features
+Tech stack
+Challenges solved
+Live Demo button
+GitHub button
+Image carousel
+
+Modal should have smooth animated transitions.
+
+CONTACT SECTION
+
+Create an elegant contact section.
+
+Contents:
+
+Contact Form
+Name
+Email
+Message
+
+Contact Information:
+
+WhatsApp
+Email
+LinkedIn
+
+Animations:
+
+Inputs glow softly on focus.
+Submit button has magnetic hover effect.
+EXTRA PREMIUM EFFECTS
+
+Add the following:
+
+Loading screen animation.
+Scroll progress indicator.
+Animated section transitions.
+Floating geometric shapes in background.
+Mouse-following light effect.
+Smooth anchor navigation.
+Back-to-top button.
+Dark luxurious atmosphere.
+
+The final result should feel like a premium developer portfolio that could win an Awwwards nomination while remaining professional and suitable for recruiters.
