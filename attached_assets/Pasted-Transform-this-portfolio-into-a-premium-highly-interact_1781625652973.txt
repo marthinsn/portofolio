@@ -1,0 +1,222 @@
+Transform this portfolio into a premium, highly interactive, Awwwards-inspired developer portfolio.
+
+The website already has animations, but I want significantly more interaction, movement, and visual feedback.
+
+HERO SECTION PROFILE IMAGE
+
+Replace the current placeholder image with a profile image container.
+
+Requirements:
+
+Large circular or modern rounded profile image.
+Add a glowing gradient halo behind the image.
+Image should float gently.
+Mouse movement creates subtle parallax movement.
+When hovering over the profile image:
+Slight 3D tilt effect.
+Soft light reflection follows cursor.
+Border glow animation.
+Smooth scaling effect.
+Animated particles appear around the image.
+The interaction should feel premium and smooth.
+
+Reference:
+Modern Apple-style interactions and Framer portfolio websites.
+
+BUTTON INTERACTIONS
+
+All clickable buttons currently feel static.
+
+Enhance ALL buttons across the website.
+
+Requirements:
+
+Magnetic hover effect.
+Scale animation on hover.
+Soft glow effect.
+Gradient shimmer animation.
+Cursor attraction effect.
+Click animation.
+Ripple effect on click.
+Smooth transitions.
+
+Apply to:
+
+View My Work
+Download CV
+Contact buttons
+Portfolio cards
+Navigation items
+Social media icons
+
+Buttons should clearly communicate that they are interactive.
+
+VIEW MY WORK BUTTON
+
+The "View My Work" button should be redesigned.
+
+Requirements:
+
+Same visual weight as Download CV button.
+Larger size.
+Strong hover state.
+Animated arrow icon.
+Glow effect.
+Subtle pulsing animation when idle.
+
+Make it impossible to miss.
+
+STICKY NAVIGATION BAR
+
+Create a premium sticky navigation bar.
+
+Requirements:
+
+Always visible when scrolling.
+Smooth appearance.
+Glassmorphism background.
+Slight blur effect.
+Active section indicator.
+Smooth scrolling navigation.
+Hover animations for menu items.
+
+Navigation Items:
+
+Home
+About
+Organization
+Skills
+Portfolio
+Contact
+
+The active section should be highlighted.
+
+ADVANCED SCROLL REVEAL ANIMATIONS
+
+Every section should have cinematic entrance animations.
+
+When entering a section:
+
+Elements should not simply fade in.
+Elements should assemble into position.
+
+Examples:
+
+Text:
+
+Letters slide individually.
+Words reveal progressively.
+Headings split and merge.
+
+Cards:
+
+Slide from different directions.
+Scale into place.
+Rotate slightly before settling.
+
+Containers:
+
+Assemble piece by piece.
+Smooth staggered motion.
+
+Images:
+
+Blur-to-focus animation.
+Slight zoom reveal.
+
+Animations should feel like the section is being constructed while scrolling.
+
+PORTFOLIO CARD INTERACTIONS
+
+Enhance project cards.
+
+Requirements:
+
+3D hover effect.
+Dynamic shadow movement.
+Glass reflection effect.
+Cursor-based tilt.
+Project preview animation.
+Image zoom effect.
+
+When clicked:
+
+Open with cinematic transition.
+Smooth scaling animation.
+Modern modal or project page transition.
+SOCIAL MEDIA ICONS
+
+Enhance LinkedIn, WhatsApp, and Email icons.
+
+Requirements:
+
+Glow on hover.
+Floating animation.
+Scale effect.
+Color transition.
+Ripple effect on click.
+AMBIENT ANIMATIONS THROUGHOUT THE WEBSITE
+
+The website should always feel alive.
+
+Add:
+
+Floating particles.
+Moving gradient blobs.
+Animated light rays.
+Soft ambient glow.
+Dynamic mesh background.
+Floating geometric shapes.
+Animated decorative lines.
+
+Use only the portfolio color palette.
+
+Keep animations subtle and premium.
+
+COOL ANIMATED VISUALS
+
+Add visible but professional animated visuals.
+
+Use Lottie animations where appropriate.
+
+Examples:
+
+Coding animation.
+Developer workspace animation.
+Technology motion graphics.
+Abstract digital network animation.
+AI-inspired moving patterns.
+Data visualization animations.
+Flowing code effects.
+
+Place them strategically across sections.
+
+Do not hide them too much.
+
+Users should clearly notice movement while still focusing on content.
+
+CUSTOM CURSOR
+
+Create a custom cursor system.
+
+Requirements:
+
+Outer cursor ring.
+Smooth movement.
+Hover states for interactive elements.
+Expand on buttons.
+Change appearance on project cards.
+Premium and modern feel.
+PERFORMANCE REQUIREMENTS
+
+Maintain smooth performance.
+
+Target:
+
+60 FPS animations.
+GPU accelerated transforms.
+Framer Motion and GSAP animations.
+Lazy-loaded Lottie assets.
+Responsive on desktop and mobile.
+
+The final experience should feel alive, cinematic, premium, interactive, and memorable while remaining professional for recruiters and clients.
