@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const FIRST = "Alex".split("");
-const LAST  = "Johnson".split("");
+const FIRST = "Marthin".split("");
+const LAST  = "Nababan".split("");
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const dramatic = [0.76, 0, 0.24, 1] as const;
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -20,9 +19,13 @@ export default function LoadingScreen() {
       {loading && (
         <motion.div
           key="loader"
-          className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden pointer-events-none"
+          initial={{ clipPath: "circle(150% at 50% 50%)" }}
+          exit={{ 
+            clipPath: "circle(0% at 50% 50%)",
+            transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } 
+          }}
           style={{ background: "#1E1922" }}
-          exit={{ y: "-102%", transition: { duration: 0.75, ease: dramatic } }}
         >
           {/* ── Animated mesh blobs ────────────────────────────────── */}
           <motion.div
@@ -158,7 +161,7 @@ export default function LoadingScreen() {
               className="mt-7 font-sans font-light text-sm tracking-[0.3em] uppercase"
               style={{ color: "rgba(255,255,255,0.35)" }}
             >
-              Full Stack Developer &nbsp;·&nbsp; IT Student
+              Web/Mobile Developer &nbsp;·&nbsp; IT Student
             </motion.p>
 
             {/* Progress bar */}

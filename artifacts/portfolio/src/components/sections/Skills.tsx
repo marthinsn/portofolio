@@ -3,51 +3,41 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionHeader } from "./About";
 import {
-  SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs,
-  SiNodedotjs, SiExpress, SiLaravel,
-  SiMysql, SiPostgresql, SiMongodb,
-  SiGit, SiDocker, SiFigma,
+  SiHtml5, SiCss, SiJavascript, SiFlutter, SiDart,
+  SiPython, SiCplusplus, SiMysql, SiFirebase, SiFigma,
+  SiCloudinary,
 } from "react-icons/si";
 import LottieScene from "@/components/LottieScene";
 import { FloatingRings } from "@/components/FloatingGeometry";
 
 const categories = [
   {
-    name: "Frontend",
+    name: "Web & Design",
     color: "#E4A390",
     skills: [
-      { name: "HTML5",      icon: <SiHtml5 />,     level: 95 },
-      { name: "CSS3",       icon: <SiCss />,        level: 90 },
-      { name: "JavaScript", icon: <SiJavascript />, level: 88 },
-      { name: "React",      icon: <SiReact />,      level: 85 },
-      { name: "Next.js",    icon: <SiNextdotjs />,  level: 78 },
+      { name: "HTML5",      icon: <SiHtml5 />,      level: 75 },
+      { name: "CSS3",       icon: <SiCss />,        level: 70 },
+      { name: "JavaScript", icon: <SiJavascript />, level: 62 },
+      { name: "UI/UX (Figma)", icon: <SiFigma />,   level: 60 },
     ],
   },
   {
-    name: "Backend",
+    name: "Mobile & Core",
     color: "#D49C68",
     skills: [
-      { name: "Node.js", icon: <SiNodedotjs />, level: 82 },
-      { name: "Express", icon: <SiExpress />,   level: 80 },
-      { name: "Laravel", icon: <SiLaravel />,   level: 72 },
+      { name: "Flutter",    icon: <SiFlutter />,    level: 72 },
+      { name: "Dart",       icon: <SiDart />,       level: 70 },
+      { name: "Python",     icon: <SiPython />,     level: 68 },
+      { name: "C++",        icon: <SiCplusplus />,  level: 65 },
     ],
   },
   {
-    name: "Database",
+    name: "Data & Tools",
     color: "#8A4F55",
     skills: [
-      { name: "MySQL",      icon: <SiMysql />,      level: 85 },
-      { name: "PostgreSQL", icon: <SiPostgresql />, level: 78 },
-      { name: "MongoDB",    icon: <SiMongodb />,    level: 75 },
-    ],
-  },
-  {
-    name: "Tools",
-    color: "#E4A390",
-    skills: [
-      { name: "Git",    icon: <SiGit />,    level: 90 },
-      { name: "Docker", icon: <SiDocker />, level: 68 },
-      { name: "Figma",  icon: <SiFigma />,  level: 80 },
+      { name: "MySQL",      icon: <SiMysql />,      level: 70 },
+      { name: "Firebase",   icon: <SiFirebase />,   level: 65 },
+      { name: "Cloudinary", icon: <SiCloudinary />, level: 60 },
     ],
   },
 ];
@@ -59,7 +49,7 @@ const skillRings = [
 
 export default function Skills() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="skills" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
@@ -75,29 +65,36 @@ export default function Skills() {
         />
       </div>
 
-      <SectionHeader
-        label="Expertise"
-        title={
-          <>
-            Technical
-            <br />
-            <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
-            >
-              Skills
-            </span>
-          </>
-        }
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionHeader
+          label="Expertise"
+          title={
+            <>
+              Technical
+              <br />
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+              >
+                Skills
+              </span>
+            </>
+          }
+        />
+      </motion.div>
 
       <div ref={ref} className="grid md:grid-cols-2 gap-8">
         {categories.map((cat, ci) => (
           <motion.div
             key={cat.name}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: ci * 0.15, ease: [0.22, 1, 0.36, 1] }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-50px" }}
+            transition={{ duration: 0.7, delay: ci * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="glass-card rounded-2xl p-6"
             data-testid={`card-skill-category-${ci}`}
           >

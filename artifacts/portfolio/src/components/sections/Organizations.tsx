@@ -6,34 +6,34 @@ import { NetworkNodes } from "@/components/FloatingGeometry";
 
 const orgs = [
   {
-    name: "Student Developer Association",
-    role: "Vice President",
-    period: "2023 — Present",
-    desc: "Led a team of 40+ members in organizing workshops, hackathons, and networking events that connected students with industry professionals.",
+    name: "Telkom University Choir",
+    role: "Head of Events - Recruitment",
+    period: "Sep 2024 — Oct 2024",
+    desc: "Designed event workflows, managed core concepts, and coordinated across multiple divisions to ensure a seamless recruitment experience.",
   },
   {
-    name: "Open Source Club",
-    role: "Core Maintainer",
-    period: "2022 — 2023",
-    desc: "Contributed to and maintained open-source projects, mentored junior contributors, and organized monthly code review sessions.",
+    name: "Telkom University Choir Academy",
+    role: "Head of Events",
+    period: "Oct 2024 — Nov 2024",
+    desc: "Spearheaded planning and management for the Academy series, focusing on training workflow and cross-member coordination.",
   },
   {
-    name: "Tech Innovation Lab",
-    role: "Research Lead",
-    period: "2023 — Present",
-    desc: "Driving research initiatives in AI and web technologies, collaborating with faculty on applied research projects and industry partnerships.",
+    name: "Telkom University Choir Aestimatio",
+    role: "Head of Events",
+    period: "Sep 2024",
+    desc: "Managed event logistics and conceptual development, ensuring all organizational needs were met within a tight schedule.",
   },
   {
-    name: "Google Developer Group",
-    role: "Campus Lead",
-    period: "2022 — Present",
-    desc: "Facilitated Google-powered events and study jams, growing the campus community to 150+ active members.",
+    name: "TUC External Concert",
+    role: "Event Division Member",
+    period: "Mar 2024 — Jul 2024",
+    desc: "Contributed to the preparation and execution of large-scale external concerts, supporting logistics and on-site coordination.",
   },
 ];
 
 export default function Organizations() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="organizations" className="relative py-28 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
@@ -48,21 +48,27 @@ export default function Organizations() {
         <NetworkNodes />
       </div>
 
-      <SectionHeader
-        label="Community"
-        title={
-          <>
-            Organizations &amp;
-            <br />
-            <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
-            >
-              Involvement
-            </span>
-          </>
-        }
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionHeader
+          label="Community"
+          title={
+            <>
+              Organizations &amp;
+              <br />
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+              >
+                Involvement
+              </span>
+            </>
+          }
+        />
+      </motion.div>
 
       <div ref={ref} className="relative">
         {/* Animated timeline line */}
@@ -99,8 +105,9 @@ export default function Organizations() {
 
                 <motion.div
                   initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className={`w-[calc(50%-2rem)] ${isLeft ? "mr-auto pr-6" : "ml-auto pl-6"}`}
                   data-testid={`card-org-${i}`}
                 >

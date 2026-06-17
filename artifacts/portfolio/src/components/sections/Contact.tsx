@@ -9,7 +9,7 @@ import { FloatingDots } from "@/components/FloatingGeometry";
 
 export default function Contact() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: false, margin: "-100px" });
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
@@ -34,9 +34,9 @@ export default function Contact() {
   });
 
   const contactLinks = [
-    { icon: <SiWhatsapp size={18} />, label: "WhatsApp", value: "+1 234 567 890", href: "https://wa.me/" },
-    { icon: <Mail size={18} />, label: "Email", value: "alex@example.com", href: "mailto:alex@example.com" },
-    { icon: <Linkedin size={18} />, label: "LinkedIn", value: "linkedin.com/in/alex", href: "#" },
+    { icon: <SiWhatsapp size={18} />, label: "WhatsApp", value: "+62 812 6098 1186", href: "https://wa.me/6281260981186" },
+    { icon: <Mail size={18} />, label: "Email", value: "mrthnnababan@gmail.com", href: "mailto:mrthnnababan@gmail.com" },
+    { icon: <Linkedin size={18} />, label: "LinkedIn", value: "Marthin Nababan", href: "https://www.linkedin.com/in/marthin-nababan-3b18a9371" },
   ];
 
   return (
@@ -53,26 +53,33 @@ export default function Contact() {
         />
       </div>
 
-      <SectionHeader
-        label="Get In Touch"
-        title={
-          <>
-            Let's
-            <br />
-            <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
-            >
-              Connect
-            </span>
-          </>
-        }
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionHeader
+          label="Get In Touch"
+          title={
+            <>
+              Let's
+              <br />
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: "linear-gradient(135deg, #E4A390, #D49C68)" }}
+              >
+                Connect
+              </span>
+            </>
+          }
+        />
+      </motion.div>
 
       <div ref={ref} className="grid md:grid-cols-2 gap-12">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-8"
         >
@@ -118,7 +125,7 @@ export default function Contact() {
 
         <motion.div
           initial={{ opacity: 0, x: 40 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
           {sent ? (
@@ -213,7 +220,7 @@ export default function Contact() {
       </div>
 
       <div className="mt-24 pt-8 border-t border-[#E4A390]/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-white/20 text-sm font-sans">2024 Alex Johnson. Crafted with intention.</p>
+        <p className="text-white/20 text-sm font-sans">2026 Marthin S. Nababan. Crafted with intention.</p>
         <p className="text-white/20 text-xs font-sans tracking-widest uppercase">IT Student & Developer</p>
       </div>
     </section>
