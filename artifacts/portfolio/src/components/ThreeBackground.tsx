@@ -122,7 +122,7 @@ export default function ThreeBackground() {
         blending: THREE.AdditiveBlending,
         depthWrite: false,
       });
-      const ls = new THREE.LineSegments(wGeo, mat) as THREE.LineSegments & { rotSpeed: [number, number, number] };
+      const ls = new THREE.LineSegments(wGeo, mat) as any;
       ls.position.set(...pos);
       ls.rotSpeed = rotSpeed;
       sGeo.dispose();

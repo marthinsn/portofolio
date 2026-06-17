@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { SiWhatsapp } from "react-icons/si";
 import { Mail, Linkedin } from "lucide-react";
@@ -11,7 +11,7 @@ const stagger = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
   },
-};
+} as const;
 
 function MagneticButton({
   children,
@@ -59,8 +59,19 @@ const heroRings = [
   { size: 560, x: "60%",  y: "30%",  duration: 50, opacity: 0.03, border: "#E4A390", rotate: -5, delay: 1 },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } 
+  }
+} as const;
+
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, margin: "-100px" });
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -76,6 +87,7 @@ export default function Hero() {
   return (
     <section
       id="home"
+      ref={containerRef}
       className="relative min-h-screen flex items-center justify-center px-6 md:px-16 overflow-hidden"
     >
       {/* Parallax radial glow */}
@@ -117,47 +129,58 @@ export default function Hero() {
         <motion.div
           variants={stagger.container}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
           className="space-y-6"
         >
           <motion.p
-            variants={stagger.item}
+            variants={fadeInUp}
             className="text-[#E4A390] text-sm tracking-[0.3em] uppercase font-sans font-medium"
           >
             Welcome
           </motion.p>
 
-          <motion.div variants={stagger.item} className="relative">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-white leading-[0.9] tracking-tight heading-glow">
-              Alex
-              <br />
-              <span
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, #E4A390 0%, #D49C68 50%, #8A4F55 100%)",
-                }}
-              >
-                Johnson
-              </span>
-            </h1>
+          <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-[#E4A390]/30 glass-card relative group shrink-0 rotate-3 hover:rotate-0 transition-transform duration-500">
+              <img 
+                src="/profile.png" 
+                alt="Marthin S. Nababan" 
+                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#28222C]/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            <div className="relative">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-white leading-[0.9] tracking-tight heading-glow">
+                Marthin S.
+                <br />
+                <span
+                  className="text-transparent bg-clip-text"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(135deg, #E4A390 0%, #D49C68 50%, #8A4F55 100%)",
+                  }}
+                >
+                  Nababan
+                </span>
+              </h1>
+            </div>
           </motion.div>
 
           <motion.p
-            variants={stagger.item}
+            variants={fadeInUp}
             className="text-[#E4A390]/80 text-base md:text-lg tracking-widest uppercase font-sans font-light max-w-xl"
           >
-            Information Technology Student &nbsp;·&nbsp; Full Stack Developer &nbsp;·&nbsp; Problem Solver
+            Telkom University Student &nbsp;·&nbsp; Web/Mobile Developer &nbsp;·&nbsp; Problem Solver
           </motion.p>
 
           <motion.p
-            variants={stagger.item}
+            variants={fadeInUp}
             className="text-white/60 text-lg md:text-xl font-sans font-light max-w-lg leading-relaxed"
           >
-            I build modern digital solutions that combine functionality, creativity, and user experience.
+            I build modern digital solutions that combine functionality, creativity, and user experience with a focus on web and mobile platforms.
           </motion.p>
 
-          <motion.div variants={stagger.item} className="flex flex-wrap gap-4 pt-4">
+          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-4">
             <MagneticButton
               data-testid="button-view-work"
               className="px-8 py-3 rounded-full font-sans font-medium text-[#28222C] transition-all duration-300 hover:shadow-lg hover:shadow-[#D49C68]/20"
@@ -172,21 +195,28 @@ export default function Hero() {
             <MagneticButton
               data-testid="button-download-cv"
               className="px-8 py-3 rounded-full font-sans font-medium text-[#E4A390] border border-[#E4A390]/30 hover:border-[#E4A390]/70 hover:bg-[#E4A390]/5 transition-all duration-300"
-              onClick={() => {}}
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/cv.pdf";
+                link.download = "CV_Marthin_S_Nababan.pdf";
+                link.click();
+              }}
             >
               Download CV
             </MagneticButton>
           </motion.div>
 
-          <motion.div variants={stagger.item} className="flex gap-5 pt-2">
+          <motion.div variants={fadeInUp} className="flex gap-5 pt-2">
             {[
-              { icon: <Linkedin size={18} />, href: "#", label: "LinkedIn" },
-              { icon: <SiWhatsapp size={18} />, href: "#", label: "WhatsApp" },
-              { icon: <Mail size={18} />, href: "mailto:", label: "Email" },
+              { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/marthin-nababan-3b18a9371", label: "LinkedIn" },
+              { icon: <SiWhatsapp size={18} />, href: "https://wa.me/6281260981186", label: "WhatsApp" },
+              { icon: <Mail size={18} />, href: "mailto:mrthnnababan@gmail.com", label: "Email" },
             ].map(({ icon, href, label }) => (
               <motion.a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid={`link-social-${label.toLowerCase()}`}
                 aria-label={label}
                 className="w-10 h-10 rounded-full flex items-center justify-center glass-card text-[#E4A390]/60 hover:text-[#E4A390] hover:border-[#E4A390]/40 transition-all duration-300"
